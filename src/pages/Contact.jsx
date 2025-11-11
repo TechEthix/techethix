@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   FaWhatsapp,
   FaPhone,
@@ -30,19 +30,68 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const formRef = useRef(null);
+
+  // IMPORTANT: Replace the placeholders below with your EmailJS credentials
+  // service ID, template ID and public (user) key. You can get these from https://www.emailjs.com
+  const EMAILJS_SERVICE_ID = 'service_tzcqt4g';
+  const EMAILJS_TEMPLATE_ID = 'template_v6apu1j';
+  const EMAILJS_PUBLIC_KEY = 'OHjr3UbLVcxLq6HW2';
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      budget: '',
-      message: '',
-    });
+
+    // Lazy-load emailjs to avoid bundling if not used
+    try {
+      const emailjs = await import('@emailjs/browser');
+
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message,
+      };
+
+      // Basic check for placeholder values. If you left the defaults 'YOUR_*', we log instead of sending.
+      if (
+        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ||
+        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID' ||
+        EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY'
+      ) {
+        console.warn('EmailJS not configured. Form data:', templateParams);
+        alert('Thank you for your message! (EmailJS not configured — form logged to console.)');
+      } else {
+        // initialize EmailJS with your public key then send the email
+        if (typeof emailjs.init === 'function') {
+          emailjs.init(EMAILJS_PUBLIC_KEY);
+        }
+
+        const result = await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams
+        );
+        console.log('EmailJS send result:', result);
+        alert('Thank you! Your message has been sent.');
+      }
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        budget: '',
+        message: '',
+      });
+    } catch (err) {
+      console.error('Failed to send message via EmailJS', err);
+      alert('Sorry, there was an error sending your message. Please try again later.');
+    }
   };
 
   const services = [
