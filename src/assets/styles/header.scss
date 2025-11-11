@@ -1,0 +1,199 @@
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: $color-white;
+  box-shadow: 0 2px 8px rgba($color-oxford, 0.1);
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+  
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: $font-heading;
+    color: $color-oxford;
+  }
+
+  &__logo-accent {
+    color: $color-rose;
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    font-weight: 500;
+    color: $color-oxford;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-rose;
+    }
+
+    &--active {
+      color: $color-rose;
+    }
+  }
+
+  &__actions {
+    display: none;
+    align-items: center;
+    gap: $spacing-md;
+
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+  }
+
+  &__whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $color-oxford;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-rose;
+    }
+  }
+
+  &__whatsapp-icon {
+    font-size: 1.25rem;
+  }
+
+  &__cta {
+    background-color: $color-rose;
+    color: $color-isabelline;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-family: $font-heading;
+    border: 2px solid $color-rose;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($color-rose, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($color-rose, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__mobile-toggle {
+    display: block;
+    font-size: 1.5rem;
+    color: $color-oxford;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  &__mobile-menu {
+    display: block;
+    padding: $spacing-md 0;
+    border-top: 1px solid rgba($color-oxford, 0.1);
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  &__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__mobile-link {
+    font-weight: 500;
+    color: $color-oxford;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-rose;
+    }
+
+    &--active {
+      color: $color-rose;
+    }
+  }
+
+  &__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba($color-oxford, 0.1);
+  }
+
+  &__mobile-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $color-oxford;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-rose;
+    }
+  }
+
+  &__mobile-cta {
+    background-color: $color-rose;
+    color: $color-isabelline;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-family: $font-heading;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($color-rose, 10%);
+    }
+  }
+}

@@ -1,0 +1,335 @@
+.contact-page {
+  min-height: 100vh;
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, $color-oxford 0%, $color-rose 100%);
+  color: $color-isabelline;
+  padding: 5rem 0 3rem;
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: $font-heading;
+    font-weight: 700;
+    color: $color-isabelline;
+    margin-bottom: $spacing-md;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: rgba($color-isabelline, 0.9);
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+}
+
+.contact-content {
+  padding: $spacing-2xl 0;
+  background-color: $color-isabelline;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 5rem 0;
+  }
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+.contact-form-wrapper {
+  background: $color-white;
+  border-radius: $radius-2xl;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+
+  &__title {
+    font-size: 1.75rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    color: rgba($color-oxford, 0.7);
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    color: $color-oxford;
+    font-size: 0.875rem;
+  }
+
+  &__input,
+  &__select,
+  &__textarea {
+    padding: 0.75rem $spacing-md;
+    border: 2px solid rgba($color-oxford, 0.2);
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: 1rem;
+    color: $color-oxford;
+    transition: border-color $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $color-rose;
+    }
+
+    &::placeholder {
+      color: rgba($color-oxford, 0.4);
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  &__submit {
+    background-color: $color-rose;
+    color: $color-isabelline;
+    padding: $spacing-md $spacing-xl;
+    border: none;
+    border-radius: $radius-md;
+    font-weight: 600;
+    font-family: $font-heading;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: darken($color-rose, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($color-rose, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &__title {
+    font-size: 1.75rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    color: rgba($color-oxford, 0.7);
+    margin-bottom: $spacing-md;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-md;
+    background: $color-white;
+    padding: $spacing-md;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-sm;
+    text-decoration: none;
+    transition: all $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      transform: translateX(4px);
+    }
+
+    &--whatsapp {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+
+      .contact-info__icon {
+        background-color: rgba($color-white, 0.2);
+        color: $color-white;
+      }
+
+      .contact-info__label,
+      .contact-info__value {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba($color-rose, 0.1);
+    color: $color-rose;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  &__details {
+    flex: 1;
+  }
+
+  &__label {
+    font-weight: 600;
+    color: $color-oxford;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__value {
+    color: rgba($color-oxford, 0.8);
+    font-size: 0.875rem;
+
+    &--small {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+  &__social {
+    background: $color-white;
+    padding: $spacing-lg;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-sm;
+  }
+
+  &__social-title {
+    font-size: 1.125rem;
+    font-family: $font-heading;
+    font-weight: 600;
+    color: $color-oxford;
+    margin-bottom: $spacing-md;
+  }
+
+  &__social-links {
+    display: flex;
+    gap: $spacing-sm;
+  }
+
+  &__social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba($color-rose, 0.1);
+    color: $color-rose;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: $color-rose;
+      color: $color-white;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__cta {
+    background: linear-gradient(135deg, $color-oxford 0%, $color-rose 100%);
+    padding: $spacing-lg;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-sm;
+    color: $color-isabelline;
+  }
+
+  &__cta-title {
+    font-size: 1.125rem;
+    font-family: $font-heading;
+    font-weight: 600;
+    color: $color-isabelline;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__cta-text {
+    color: rgba($color-isabelline, 0.9);
+    font-size: 0.875rem;
+    margin-bottom: $spacing-md;
+  }
+
+  &__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: $color-isabelline;
+    color: $color-oxford;
+    padding: 0.75rem $spacing-lg;
+    border-radius: $radius-md;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: darken($color-isabelline, 5%);
+      transform: translateY(-2px);
+    }
+
+    svg {
+      font-size: 1.125rem;
+    }
+  }
+}
