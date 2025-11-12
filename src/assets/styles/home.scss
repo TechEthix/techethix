@@ -717,3 +717,114 @@
     transform: translateY(0);
   }
 }
+
+// ===== Home About teaser (namespaced to avoid conflicts) =====
+.home-about {
+  padding: $spacing-2xl 0;
+  
+  
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    display: flex;
+    gap: $spacing-2xl;
+    justify-items: center;
+    text-align: center;
+    flex-direction: column;
+
+    &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-family: $font-heading;
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__section-subtitle {
+    font-size: 1.125rem;
+    color: rgba($color-oxford, 0.7);
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      text-align: left;
+    }
+  }
+  &__containerbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+  &__intro {
+    flex: 1;
+
+    
+    .home-about__title, .home-about__subtitle {
+      margin-bottom: $spacing-md;
+    }
+
+    & .home-about__title {
+      font-family: $font-heading;
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      color: $color-oxford;
+      margin-bottom: $spacing-sm;
+    }
+
+    & .home-about__subtitle {
+      color: rgba($color-oxford, 0.8);
+      font-size: 1rem;
+      margin-bottom: $spacing-md;
+      padding: 0 2rem 0 0;
+    }
+
+    & .home-about__values {
+      display: flex;
+      gap: $spacing-sm;
+      flex-wrap: wrap;
+      margin-bottom: $spacing-md;
+
+      .chip {
+        background: $color-white;
+        color: $color-oxford;
+        padding: 0.35rem 0.75rem;
+        border-radius: $radius-full;
+        font-size: 0.875rem;
+        border: 1px solid rgba($color-oxford, 0.06);
+      }
+    }
+
+    & .home-about__actions {
+      display: flex;
+      gap: $spacing-md;
+      margin-top: $spacing-md;
+
+      .btn {
+        padding: $spacing-sm $spacing-md;
+        border-radius: $radius-md;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .btn--primary { background: $color-rose; color: $color-isabelline; }
+      .btn--secondary { background: transparent; color: $color-oxford; border: 1px solid rgba($color-oxford, 0.08); }
+    }
+  }
+
+  // New improved cards layout: stacked on mobile, split on desktop
+  &__image {
+    flex: 1;
+  }
+  
+}

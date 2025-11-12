@@ -7,6 +7,7 @@ import Services from './pages/Services.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import './assets/styles/style.scss';
+import About from './pages/About.jsx';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

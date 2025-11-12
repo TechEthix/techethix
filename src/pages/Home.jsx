@@ -12,6 +12,11 @@ import {
   FaArrowRight,
   FaStar,
 } from 'react-icons/fa';
+import OurStory from '../assets/images/OurStory.png';
+import OurVision from '../assets/images/OurVision.png';
+import OurMission from '../assets/images/OurMission.png';
+import AboutUsImage from '../assets/images/AboutUs.png';
+import HeroImage from '../assets/images/HeroImage.png';
 
 const Home = () => {
   const services = [
@@ -127,18 +132,7 @@ const Home = () => {
               </div>
             </div>
             <div className="hero__visual">
-              <div className="hero__visual-bg"></div>
-              <div className="hero__visual-card">
-                <div className="hero__visual-content">
-                  <div className="hero__visual-line hero__visual-line--short"></div>
-                  <div className="hero__visual-line hero__visual-line--full"></div>
-                  <div className="hero__visual-line hero__visual-line--medium"></div>
-                  <div className="hero__visual-grid">
-                    <div className="hero__visual-box"></div>
-                    <div className="hero__visual-box"></div>
-                  </div>
-                </div>
-              </div>
+              <img src={HeroImage} alt="" />
             </div>
           </div>
         </div>
@@ -166,6 +160,41 @@ const Home = () => {
               <span>View All Services</span>
               <FaArrowRight />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About teaser section on Home (namespaced .home-about to avoid conflicts) */}
+      <section className="home-about">
+
+        <div className="home-about__container container">
+          <div className="home-about__header">
+            <h2 className="home-about__section-title">About TechEthix</h2>
+            <p className="home-about__section-subtitle">Get to know the team behind your digital growth</p>
+          </div>
+          <div className="home-about__containerbox">
+            <div className="home-about__intro">
+              <h3 className="home-about__title">TechEthix — Empowering Small Businesses Through Technology</h3>
+              <p className="home-about__subtitle"><p>TechEthix is a modern digital solutions company helping small and medium businesses grow through technology, creativity, and automation.</p>
+                <p>We combine innovation with ethics, ensuring that every service we offer — from web and app development to AI-driven marketing — helps your business stand out with trust and authenticity.</p>
+                <p>
+                  We believe in growth with integrity, design with purpose, and technology with heart.</p></p>
+              <div className="home-about__values">
+                <span className="chip">Affordable</span>
+                <span className="chip">Accessible</span>
+                <span className="chip">Ethical</span>
+                <span className="chip">Innovative</span>
+                <span className="chip">Modern</span>
+              </div>
+              <div className="home-about__actions">
+                <Link to="/about" className="btn btn--primary">Learn more about us</Link>
+                <Link to="/contact" className="btn btn--secondary">Get a free audit</Link>
+              </div>
+            </div>
+
+            <div className="home-about__image">
+              <img src={AboutUsImage} alt="" />
+            </div>
           </div>
         </div>
       </section>

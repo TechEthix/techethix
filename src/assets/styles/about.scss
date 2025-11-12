@@ -1,0 +1,504 @@
+// Shared card placeholder (DRY)
+%about-card {
+  background: $color-isabelline;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+}
+
+// ===== Namespace all styles under .about-page to avoid cross-page conflicts =====
+.about-page {
+
+  // ===== 1. Hero Section =====
+  .about-hero {
+  background: linear-gradient(135deg, $color-oxford 0%, $color-oxford 60%, $color-rose 100%);
+  color: $color-isabelline !important;
+  padding: 5rem 0 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+    color: $color-isabelline;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-lg;
+    opacity: 0.95;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-isabelline;
+  }
+
+  &__ctas {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $radius-md;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all $transition-base;
+    font-family: $font-heading;
+    font-size: 1rem;
+    border: 2px solid transparent;
+
+    &--primary {
+      background-color: $color-rose;
+      color: $color-isabelline;
+      border-color: $color-rose;
+
+      &:hover {
+        background-color: darken($color-rose, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($color-rose, 0.3);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: $color-isabelline;
+      border: 2px solid $color-isabelline;
+
+      &:hover {
+        background-color: rgba($color-isabelline, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// ===== 2. About Cards Section (Story / Vision / Mission - Zig-zag) =====
+.about-cards {
+  padding: $spacing-2xl 0;
+
+  .about-cards__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .about-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    align-items: center;
+    padding: $spacing-2xl $spacing-md;
+
+    &__media {
+      width: 100%;
+      height: 260px;
+      border-radius: $radius-md;
+      overflow: hidden;
+    //   box-shadow: $shadow-md;
+      background: $color-white;
+    }
+
+    // Alternating background colors: Story (index 0) = isabelline, Vision (index 1) = white, Mission (index 2) = isabelline
+    &:nth-child(1) {
+      background-color: $color-isabelline;
+    }
+
+    &:nth-child(2) {
+      background-color: $color-white;
+    }
+
+    &:nth-child(3) {
+      background-color: $color-isabelline;
+    }
+
+    // &__media-placeholder {
+    //   width: 100%;
+    //   height: 100%;
+    //   display: block;
+    // }
+
+    // &__content {
+    //   padding: $spacing-sm 0;
+    // }
+
+    &__title {
+      font-size: 1.625rem;
+      margin-bottom: $spacing-sm;
+      color: $color-oxford;
+    }
+
+    &__text {
+      color: rgba($color-oxford, 0.85);
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+    }
+
+
+    // Desktop layout: two columns with zig-zag via reverse modifier
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr;
+      padding: $spacing-2xl $spacing-xl;
+      gap: $spacing-xl;
+
+      &__media {
+        height: 340px;
+      }
+
+      &.about-card--reverse {
+        .about-card__media {
+          order: 2;
+        }
+        .about-card__content {
+          order: 1;
+          padding-right: $spacing-lg;
+        }
+      }
+
+      &:not(.about-card--reverse) {
+        .about-card__media {
+          order: 1;
+        }
+        .about-card__content {
+          order: 2;
+          padding-left: $spacing-lg;
+        }
+      }
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      &__media {
+        height: 420px;
+      }
+      &__title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// Media utility for card images/svg
+.about-card__media img,
+.about-card__media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+// ===== 3. Core Values Section =====
+.values {
+//   background-color: $color-isabelline;
+  padding: $spacing-2xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 5rem 0;
+  }
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-md;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    color: $color-rose;
+    font-weight: 500;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-md) {
+      gap: $spacing-md;
+    }
+  }
+}
+
+.value-card {
+  @extend %about-card;
+  text-align: center;
+  transition: all $transition-base;
+  border-top: 4px solid $color-rose;
+
+  &:hover {
+    transform: translateY(-8px);
+    scale: 1.1;
+    box-shadow: $shadow-md;
+  }
+
+  &__icon {
+    font-size: 3rem;
+    color: $color-rose;
+    margin-bottom: $spacing-md;
+    display: inline-block;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+  }
+}
+
+// ===== 4. Journey / Timeline Section =====
+.journey {
+  background-color: $color-isabelline;
+  padding: $spacing-2xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 5rem 0;
+  }
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: $color-oxford;
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__timeline {
+    position: relative;
+    padding: $spacing-md 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: $color-rose;
+      transform: translateX(-50%);
+
+      @media (max-width: $breakpoint-md) {
+        left: 20px;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: $spacing-2xl;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      padding-left: 80px;
+      gap: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: $color-rose;
+      border: 4px solid $color-white;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+
+      @media (max-width: $breakpoint-md) {
+        left: 12px;
+      }
+    }
+
+    &:nth-child(even) {
+      @media (min-width: $breakpoint-lg) {
+        grid-template-columns: 1fr 1fr;
+        direction: rtl;
+
+        .journey__content {
+          direction: ltr;
+        }
+      }
+    }
+  }
+
+  &__marker {
+    font-family: $font-heading;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-rose;
+    text-align: center;
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @extend %about-card;
+    padding: $spacing-lg;
+    border-radius: $radius-md;
+  }
+
+  &__content-title {
+    font-family: $font-heading;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__content-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+  }
+}
+
+// ===== 5. Trust Badges Section =====
+.trust-badges {
+  background-color: $color-white;
+  padding: $spacing-xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: $color-oxford;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__content {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__values {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.trust-badge {
+  background: $color-isabelline;
+  border: 2px solid $color-rose;
+  color: $color-rose;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-full;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $color-rose;
+    color: $color-white;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-md) {
+  .about-page {
+    .about-hero {
+      padding: 3rem 0;
+    }
+    .about-cards,
+    .values,
+    .journey,
+    .trust-badges {
+      padding: 3rem 0;
+    }
+  }
+}
+
+}
