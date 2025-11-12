@@ -3,7 +3,8 @@ name: Deploy React App to Hostinger
 on:
   push:
     branches:
-      - master # The branch you want to deploy from
+      - main
+      - master # keep master if you still use it
 
 jobs:
   deploy:
@@ -15,10 +16,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Use your required Node.js version
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build React App
         run: npm run build
@@ -30,6 +31,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/
-          server-dir: /public_html/ # Target directory on Hostinger
+          server-dir: /public_html/
           log-level: verbose
-          # Ensure all existing files are overwritten
+          # If Hostinger requires SFTP, enable:
+          protocol: sftp
+          port: 22

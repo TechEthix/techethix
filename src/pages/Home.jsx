@@ -110,14 +110,14 @@ const Home = () => {
                 Digital growth for local businesses — simple, ethical, and affordable
               </h1>
               <p className="hero__subtitle">
-                Websites, apps, marketing, and AI automation that help Indore & PAN-India SMEs compete online
+                Websites, Apps, Social Media Marketing, Graphic Designing and AI automation that help SMEs compete online
               </p>
               <div className="hero__actions">
                 <Link to="/contact" className="hero__btn hero__btn--primary">
                   Get Free Quote
                 </Link>
-                <Link to="/contact" className="hero__btn hero__btn--secondary">
-                  Free Digital Audit
+                <Link to="/about" className="hero__btn hero__btn--secondary">
+                  About TechEthix
                 </Link>
               </div>
               <div className="hero__trust">
