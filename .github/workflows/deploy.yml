@@ -3,7 +3,7 @@ name: Deploy React App to Hostinger
 on:
   push:
     branches:
-      - main # The branch you want to deploy from
+      - master # The branch you want to deploy from
 
 jobs:
   deploy:
