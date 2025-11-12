@@ -310,7 +310,7 @@ const Home = () => {
               Book Free 20-Min Call
             </Link>
             <a
-              href="https://wa.me/911234567890"
+              href="https://wa.me/919424989187"
               target="_blank"
               rel="noopener noreferrer"
               className="cta__btn cta__btn--secondary"
