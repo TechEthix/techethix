@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import {
   FaLightbulb,
-  FaHandshake,
   FaRocket,
   FaShieldAlt,
-  FaUsers,
   FaHeart,
   FaArrowRight,
   FaWhatsapp,
@@ -101,7 +99,7 @@ const aboutUSCards =
                 Get In Touch <FaArrowRight />
               </Link>
               <a
-                href="https://wa.me/919424989187"
+                href="https://wa.me/+916262326939"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about-hero__cta about-hero__cta--secondary"

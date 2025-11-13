@@ -43,7 +43,7 @@ const Header = () => {
 
           <div className="header__actions">
             <a
-              href="https://wa.me/9424989187"
+              href="https://wa.me/+916262326939"
               target="_blank"
               rel="noopener noreferrer"
               className="header__whatsapp"

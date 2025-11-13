@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaInstagram,
   FaWhatsapp,
@@ -16,9 +15,6 @@ const Footer = () => {
   const quickLinks = [
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
-    // { name: 'Portfolio', path: '/portfolio' },
-    // { name: 'Pricing', path: '/pricing' },
-    // { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -31,10 +27,10 @@ const Footer = () => {
     'AI Automation',
   ];
 
-  const legalLinks = [
-    { name: 'Privacy Policy', path: '/privacy' },
-    { name: 'Terms of Service', path: '/terms' },
-  ];
+  // const legalLinks = [
+  //   { name: 'Privacy Policy', path: '/privacy' },
+  //   { name: 'Terms of Service', path: '/terms' },
+  // ];
 
   return (
     <footer className="footer">
@@ -54,7 +50,7 @@ const Footer = () => {
               </div>
               <div className="footer__contact-item">
                 <FaPhone className="footer__icon" />
-                <a href="tel:+919424989187">+91 9424989187</a>
+                <a href="tel:+916262326939">+91 6262326939</a>
               </div>
               <div className="footer__contact-item">
                 <FaEnvelope className="footer__icon" />
@@ -133,7 +129,7 @@ const Footer = () => {
               </a>
             </div>
             <a
-              href="https://wa.me/919424989187"
+              href="https://wa.me/+916262326939"
               target="_blank"
               rel="noopener noreferrer"
               className="footer__whatsapp-btn"

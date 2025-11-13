@@ -12,9 +12,6 @@ import {
   FaArrowRight,
   FaStar,
 } from 'react-icons/fa';
-import OurStory from '../assets/images/OurStory.png';
-import OurVision from '../assets/images/OurVision.png';
-import OurMission from '../assets/images/OurMission.png';
 import AboutUsImage from '../assets/images/AboutUs.png';
 import HeroImage from '../assets/images/HeroImage.png';
 
@@ -310,7 +307,7 @@ const Home = () => {
               Book Free 20-Min Call
             </Link>
             <a
-              href="https://wa.me/919424989187"
+              href="https://wa.me/+916262326939"
               target="_blank"
               rel="noopener noreferrer"
               className="cta__btn cta__btn--secondary"

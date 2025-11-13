@@ -14,27 +14,23 @@ import {
   FaCheck,
 } from 'react-icons/fa';
 
-const Services = () => {
-  const [expandedService, setExpandedService] = useState(null);
-  const location = useLocation();
-
-  const services = [
-    {
-      icon: <FaCode />,
-      title: 'Web Development',
-      shortDescription: 'Professional, responsive websites that drive business growth',
-      fullDescription: 'We create modern, SEO-optimized websites that not only look great but also convert visitors into customers. From simple landing pages to complex web applications, we handle it all.',
-      features: [
-        'Responsive design for all devices',
-        'SEO optimization',
-        'Fast loading speeds',
-        'Content Management System',
-        'E-commerce integration',
-        'Analytics setup',
-      ],
-      process: 'Discovery → Design → Development → Testing → Launch → Support',
-      pricing: 'Starting from ₹15,000',
-    },
+const services = [
+  {
+    icon: <FaCode />,
+    title: 'Web Development',
+    shortDescription: 'Professional, responsive websites that drive business growth',
+    fullDescription: 'We create modern, SEO-optimized websites that not only look great but also convert visitors into customers. From simple landing pages to complex web applications, we handle it all.',
+    features: [
+      'Responsive design for all devices',
+      'SEO optimization',
+      'Fast loading speeds',
+      'Content Management System',
+      'E-commerce integration',
+      'Analytics setup',
+    ],
+    process: 'Discovery → Design → Development → Testing → Launch → Support',
+    pricing: 'Starting from ₹15,000',
+  },
     {
       icon: <FaMobile />,
       title: 'App Development',
@@ -149,55 +145,59 @@ const Services = () => {
     },
   ];
 
-  const pricingPlans = [
-    {
-      name: 'Starter',
-      price: '₹15,000',
-      description: 'Perfect for small businesses getting started online',
-      features: [
-        'Basic website or landing page',
-        'Mobile responsive design',
-        'SEO basics',
-        'Contact form',
-        '3 months support',
-        'Social media setup',
-      ],
-      cta: 'Get Started',
-    },
-    {
-      name: 'Growth',
-      price: '₹35,000',
-      description: 'For businesses ready to scale their digital presence',
-      features: [
-        'Full website with CMS',
-        'Advanced SEO',
-        'E-commerce functionality',
-        'Custom features',
-        '6 months support',
-        'Marketing integration',
-        'Analytics dashboard',
-        'Content creation',
-      ],
-      cta: 'Choose Growth',
-      featured: true,
-    },
-    {
-      name: 'Premium',
-      price: 'Custom',
-      description: 'Enterprise solutions with full support',
-      features: [
-        'Custom web/app development',
-        'Dedicated project manager',
-        'Priority support',
-        'Advanced integrations',
-        '12 months support',
-        'Marketing campaigns',
-        'AI automation',
-        'Ongoing optimization',
-      ],
-      cta: 'Contact Us',
-    },
-  ];
+const Services = () => {
+  const [expandedService, setExpandedService] = useState(null);
+  const location = useLocation();
+
+  // const pricingPlans = [
+  //   {
+  //     name: 'Starter',
+  //     price: '₹15,000',
+  //     description: 'Perfect for small businesses getting started online',
+  //     features: [
+  //       'Basic website or landing page',
+  //       'Mobile responsive design',
+  //       'SEO basics',
+  //       'Contact form',
+  //       '3 months support',
+  //       'Social media setup',
+  //     ],
+  //     cta: 'Get Started',
+  //   },
+  //   {
+  //     name: 'Growth',
+  //     price: '₹35,000',
+  //     description: 'For businesses ready to scale their digital presence',
+  //     features: [
+  //       'Full website with CMS',
+  //       'Advanced SEO',
+  //       'E-commerce functionality',
+  //       'Custom features',
+  //       '6 months support',
+  //       'Marketing integration',
+  //       'Analytics dashboard',
+  //       'Content creation',
+  //     ],
+  //     cta: 'Choose Growth',
+  //     featured: true,
+  //   },
+  //   {
+  //     name: 'Premium',
+  //     price: 'Custom',
+  //     description: 'Enterprise solutions with full support',
+  //     features: [
+  //       'Custom web/app development',
+  //       'Dedicated project manager',
+  //       'Priority support',
+  //       'Advanced integrations',
+  //       '12 months support',
+  //       'Marketing campaigns',
+  //       'AI automation',
+  //       'Ongoing optimization',
+  //     ],
+  //     cta: 'Contact Us',
+  //   },
+  // ];
 
   const faqs = [
     {
@@ -301,7 +301,7 @@ const Services = () => {
                     </div>
 
                     <div className="service-detail__footer">
-                      <span className="service-detail__pricing">{service.pricing}</span>
+                      {/* <span className="service-detail__pricing">{service.pricing}</span> */}
                       <Link to="/contact" className="service-detail__cta">
                         Get Quote
                       </Link>
@@ -379,7 +379,7 @@ const Services = () => {
               Schedule Free Consultation
             </Link>
             <a
-              href="https://wa.me/911234567890"
+              href="https://wa.me/+916262326939"
               target="_blank"
               rel="noopener noreferrer"
               className="services-cta__btn services-cta__btn--secondary"

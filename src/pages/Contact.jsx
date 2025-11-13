@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState} from 'react';
 import {
   FaWhatsapp,
   FaPhone,
@@ -6,7 +6,6 @@ import {
   FaMapMarkerAlt,
   FaClock,
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaInstagram,
 } from 'react-icons/fa';
@@ -29,8 +28,6 @@ const Contact = () => {
       [name]: value,
     }));
   };
-
-  const formRef = useRef(null);
 
   // IMPORTANT: Replace the placeholders below with your EmailJS credentials
   // service ID, template ID and public (user) key. You can get these from https://www.emailjs.com
@@ -272,7 +269,7 @@ const Contact = () => {
 
               <div className="contact-info__items">
                 <a
-                  href="https://wa.me/919424989187"
+                  href="https://wa.me/+916262326939"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-info__item contact-info__item--whatsapp"
@@ -282,12 +279,12 @@ const Contact = () => {
                   </div>
                   <div className="contact-info__details">
                     <h3 className="contact-info__label">WhatsApp</h3>
-                    <p className="contact-info__value">+91 9424989187</p>
+                    <p className="contact-info__value">+91 6262326939</p>
                   </div>
                 </a>
 
                 <a
-                  href="tel:+919424989187"
+                  href="tel:+916262326939"
                   className="contact-info__item"
                 >
                   <div className="contact-info__icon">
@@ -388,7 +385,7 @@ const Contact = () => {
                   Book a free 20-minute consultation call with our team
                 </p>
                 <a
-                  href="https://wa.me/919424989187"
+                  href="https://wa.me/+916262326939"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-info__cta-btn"
