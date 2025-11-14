@@ -120,7 +120,7 @@ const aboutUSCards =
               className={`about-card ${index % 2 === 0 ? 'about-card--reverse' : ''}`}
             >
               <div className="about-card__media" aria-hidden>
-                <img src={card.image} alt="" />
+                <img src={card.image} alt="" loading='lazy'/>
 
               </div>
 
